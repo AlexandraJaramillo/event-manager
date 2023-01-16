@@ -22,5 +22,6 @@
     </head>
     <body>
     <h1>DIBUJA UN POST HERE</h1>
+    <h2>Description</h2>
     </body>
 </html>
