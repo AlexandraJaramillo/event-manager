@@ -4,17 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreeventsRequest;
 use App\Http\Requests\UpdateeventsRequest;
-use App\Models\events;
-use Illuminate\Support\Facades\DB;
+use App\Models\Event;
 
-class EventsController
+class EventController
 {
     public function index()
     
     {
-        $posts = DB::table('events')->get();
+        $events = Event::get();
 
-        return view('home', ['posts' => $posts]);
+        return view('home', ['events' => $events]);
     }
 
     public function show($event){
@@ -42,7 +41,7 @@ class EventsController
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\events  $events
+     * @param  \App\Models\Event  $events
      * @return \Illuminate\Http\Response
      */
    
@@ -50,10 +49,10 @@ class EventsController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\events  $events
+     * @param  \App\Models\Event  $events
      * @return \Illuminate\Http\Response
      */
-    public function edit(events $events)
+    public function edit(Event $events)
     {
         //
     }
@@ -62,10 +61,10 @@ class EventsController
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateeventsRequest  $request
-     * @param  \App\Models\events  $events
+     * @param  \App\Models\Event  $events
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateeventsRequest $request, events $events)
+    public function update(UpdateeventsRequest $request, Event $events)
     {
         //
     }
@@ -73,10 +72,10 @@ class EventsController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\events  $events
+     * @param  \App\Models\event  $events
      * @return \Illuminate\Http\Response
      */
-    public function destroy(events $events)
+    public function destroy(Event $events)
     {
         //
     }

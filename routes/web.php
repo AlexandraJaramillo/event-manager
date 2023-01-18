@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\EventsController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [EventsController::class, 'index']);
+Route::get('/', [EventController::class, 'index']);
 Route::get('/home/{post}', [PostController::class, 'show']);
 Route::view('/event', 'event');
 Route::view('/register', 'register');
