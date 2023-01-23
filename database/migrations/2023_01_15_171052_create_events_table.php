@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('description');
             $table->date('date');
             $table->time('time');
-            $table->string('location');
-            $table->string('max_participants');
+            $table->string('location')->nullable();
+            $table->string('max_participants')->nullable();
             $table->string('tags');            
             $table->string('available');
             $table->string('link');           

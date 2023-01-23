@@ -1,14 +1,12 @@
-@extends('components.layout')
-    {{-- @if (!Auth::check()) --}}
-    {{-- @include('partials._hero') --}}
-    {{-- @endif --}}
-
-    
-@section('content')
+<x-layout>
   
     {{-- @include('partials._carousel') --}}
   
     <div class="lg:grid lg:grid-cols-1 gap-4 space-y-4 md:space-y-0 mx-4 bg-red-300">
+
+      <a href="/eventsform">
+        <p>Create Event</p>
+      </a>
         
   
       @unless(count($events) == 1)
@@ -61,13 +59,16 @@
                   <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/shapes/waves-white.svg" class="absolute top-0 hidden w-1/2 h-full lg:block" alt="waves" />
                   <div class="relative flex items-center justify-center h-full">
                     <img class="relative z-20 w-full pt-6" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/illustrations/rocket-white.png" alt="rocket" />
+
                   </div>
                 </div>
               </div>
 
             <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
               <div class="flex flex-col h-full">
-                <p class="pt-2 mb-1 font-semibold">{{ $event->title }}</p>
+                <a href="/events/{{$event->id}}">
+                  <p class="pt-2 mb-1 font-semibold">{{ $event->title }}</p>
+                </a>
                 <h5 class="font-bold">{{ $event->date }}</h5>
                 <p class="mb-12">{{ $event->time }}</p>
                 <p class="mb-12">{{ $event->location }}</p>
@@ -93,5 +94,5 @@
       
     </div>
 
-@endsection
+  </x-layout>
   

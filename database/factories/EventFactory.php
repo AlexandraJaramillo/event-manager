@@ -20,7 +20,7 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(),
+            'title' => 'MAsterClass Vue',
             'date' => $this->faker->date(),
             'time' => '18:00:00',
             'location'=>$this->faker->city(),

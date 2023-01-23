@@ -49,7 +49,10 @@
   </nav>
 
   <main>
-    @yield('content')
+    {{-- @yield('content') --}}
+
+    
+    {{$slot}}
   </main>
 
   {{-- <footer

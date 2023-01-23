@@ -14,7 +14,7 @@ class EventsController
 
         return view('events.index', [
         
-            'events' => Event::all()
+            'events' => Event::all()         
 
         ]);
         
@@ -22,19 +22,39 @@ class EventsController
 
     //Show single event
     public function show(Event $event) {
-        // return view('events.show', [
-        //     'event' => $event
-        // ]);
+        return view('events.show', [
+            'event' => $event
+        ]);
     }
 
     // Show Create Form
     public function create() {
-        // return view('events.create');
+        return view('events.create');
     }
+    //
 
-    // Store Event Data
+        // Store Event Data
     public function store(Request $request) {
-        
+       
+        $formFields = $request->validate([
+            'title' => 'required',
+            'tags' => 'required',
+            'link' => 'required',
+            'date' => 'required',
+            'time' => 'required',   
+            'max_participants' => 'required',          
+            'description' => 'required',
+            'available' => 'required',
+            'location' => 'required'
+        ]);
+
+        if($request->hasFile('cover')) {
+            $formFields['cover'] = $request->file('cover')->store('images', 'public');
+        }
+
+        Event::create($formFields);
+
+        return redirect('/')->with('message', 'Event created successfully!');
     }
 
     // Show Edit Form

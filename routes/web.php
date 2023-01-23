@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [EventsController::class, 'index']);
+Route::get('/events/{event}', [EventsController::class, 'show']);
+Route::get('/eventsform', [EventsController::class, 'create']);
+Route::post('/events', [EventsController::class, 'store']);
+
+
 // Route::get('/home/{post}', [PostController::class, 'show']);
 // Route::view('/event', 'event');
 // Route::view('/register', 'register');
