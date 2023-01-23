@@ -2,82 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreeventsRequest;
-use App\Http\Requests\UpdateeventsRequest;
-use App\Models\events;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\Event;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class EventsController
 {
-    public function index()
+    //Show all events
+    public function index() {
+
+        return view('events.index', [
+        
+            'events' => Event::all()
+
+        ]);
+        
+    }
+
+    //Show single event
+    public function show(Event $event) {
+        // return view('events.show', [
+        //     'event' => $event
+        // ]);
+    }
+
+    // Show Create Form
+    public function create() {
+        // return view('events.create');
+    }
+
+    // Store Event Data
+    public function store(Request $request) {
+        
+    }
+
+    // Show Edit Form
+    public function edit(Event $event) {
+        
+    }
+
+    // Update Event Data
+    public function update(Request $request, Event $event) {
+        // Make sure logged in user is admin
+        
+    }
+
+    // Delete Event
+    public function destroy(Event $event) {
+        // Make sure logged in user is admin
+        
+    }
+
     
-    {
-        $posts = DB::table('events')->get();
-
-        return view('home', ['posts' => $posts]);
-    }
-
-    public function show($event){
-        return $event;
-    }
-   
-    
-    
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreeventsRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreeventsRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\events  $events
-     * @return \Illuminate\Http\Response
-     */
-   
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\events  $events
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(events $events)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateeventsRequest  $request
-     * @param  \App\Models\events  $events
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateeventsRequest $request, events $events)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\events  $events
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(events $events)
-    {
-        //
-    }
 }
