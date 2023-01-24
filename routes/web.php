@@ -1,17 +1,10 @@
 <?php
-use App\Http\Controllers\EventsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventsController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//EVENTS
+
 //All Events
 Route::get('/', [EventsController::class, 'index']);
 
@@ -32,6 +25,24 @@ Route::delete('/events/{event}', [EventsController::class, 'destroy']);
 
 //Single Event
 Route::get('/events/{event}', [EventsController::class, 'show']);
+
+//USERS
+
+//Show Register/Create Form
+Route::get('/register', [UserController::class, 'create']);
+
+//Create new User
+Route::post('/users', [UserController::class, 'store']);
+
+// Logout User
+Route::post('/logout', [UserController::class, 'logout']);
+
+//Show Login Form
+Route::get('/login', [UserController::class, 'login']);
+
+// Log in User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
 
 
 
