@@ -1,27 +1,17 @@
 <x-layout>
     <x-card class="p-10 max-w-lg mx-auto mt-24">
       <header class="text-center">
-        <h2 class="text-2xl font-bold uppercase mb-1">Edit Gig</h2>
-        <p class="mb-4">Edit: {{$event->title}}</p>
+        <h2 class="text-2xl font-bold uppercase mb-1">Edit Event</h2>
+        <p class="mb-4"> {{$event->title}}</p>
       </header>
   
       <form method="POST" action="/events/{{$event->id}}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-6">
-          <label for="company" class="inline-block text-lg mb-2">Company Name</label>
-          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="company"
-            value="{{$event->company}}" />
-  
-          @error('company')
-          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-          @enderror
-        </div>
-  
-        <div class="mb-6">
-          <label for="title" class="inline-block text-lg mb-2">Job Title</label>
+          <label for="title" class="inline-block text-lg mb-2">Title</label>
           <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
-            placeholder="Example: Senior Laravel Developer" value="{{$event->title}}" />
+            value="{{$event->title}}" />
   
           @error('title')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -29,44 +19,19 @@
         </div>
   
         <div class="mb-6">
-          <label for="location" class="inline-block text-lg mb-2">Job Location</label>
-          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="location"
-            placeholder="Example: Remote, Boston MA, etc" value="{{$event->location}}" />
-  
-          @error('location')
-          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-          @enderror
-        </div>
-  
-        <div class="mb-6">
-          <label for="email" class="inline-block text-lg mb-2">
-            Contact Email
-          </label>
-          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="email" value="{{$event->email}}" />
-  
-          @error('email')
-          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-          @enderror
-        </div>
-  
-        <div class="mb-6">
-          <label for="website" class="inline-block text-lg mb-2">
-            Website/Application URL
-          </label>
-          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="website"
-            value="{{$event->website}}" />
-  
-          @error('website')
-          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-          @enderror
-        </div>
-  
-        <div class="mb-6">
-          <label for="tags" class="inline-block text-lg mb-2">
-            Tags (Comma Separated)
-          </label>
+          <label for="tags" class="inline-block text-lg mb-2">Tags</label>
           <input type="text" class="border border-gray-200 rounded p-2 w-full" name="tags"
-            placeholder="Example: Laravel, Backend, Postgres, etc" value="{{$event->tags}}" />
+            placeholder="Example: Senior Laravel Developer" value="{{$event->tags}}" />
+  
+          @error('tags')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+
+        <div class="mb-6">
+          <label for="link" class="inline-block text-lg mb-2">Link</label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="link"
+            placeholder="Example: Senior Laravel Developer" value="{{$event->link}}" />
   
           @error('tags')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -74,15 +39,72 @@
         </div>
   
         <div class="mb-6">
-          <label for="logo" class="inline-block text-lg mb-2">
-            Company Logo
+          <label for="location" class="inline-block text-lg mb-2">Location</label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="location"
+            placeholder="Example: Remote, Boston MA, etc" value="{{$event->location}}" />
+  
+          @error('location')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+
+        <div class="mb-6">
+          <label for="date" class="inline-block text-lg mb-2">
+            Date
           </label>
-          <input type="file" class="border border-gray-200 rounded p-2 w-full" name="logo" />
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="date" value="{{$event->date}}" />
+  
+          @error('date')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+
+        <div class="mb-6">
+          <label for="max_participants" class="inline-block text-lg mb-2">
+            Num Participants
+          </label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="max_participants" value="{{$event->max_participants}}" />
+  
+          @error('max_participants')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+  
+        <div class="mb-6">
+          <label for="time" class="inline-block text-lg mb-2">
+            Time
+          </label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="time"
+            value="{{$event->time}}" />
+  
+          @error('time')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+  
+        <div class="mb-6">
+          <label for="available" class="inline-block text-lg mb-2">
+            Available
+          </label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="available"
+            placeholder="Example: yes/no" value="{{$event->available}}" />
+  
+          @error('available')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>        
+        
+  
+        <div class="mb-6">
+          <label for="cover" class="inline-block text-lg mb-2">
+            Cover
+          </label>
+          <input type="file" class="border border-gray-200 rounded p-2 w-full" name="cover" />
   
           <img class="w-48 mr-6 mb-6"
-            src="{{$event->logo ? asset('storage/' . $event->logo) : asset('/images/no-image.png')}}" alt="" />
+            src="{{$event->cover ? asset('storage/' . $event->cover) : asset('/images/no-image.png')}}" alt="" />
   
-          @error('logo')
+          @error('cover')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
           @enderror
         </div>
@@ -101,7 +123,7 @@
   
         <div class="mb-6">
           <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-            Update Gig
+            Update Event
           </button>
   
           <a href="/" class="text-black ml-4"> Back </a>

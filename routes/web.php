@@ -12,16 +12,31 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//All Events
 Route::get('/', [EventsController::class, 'index']);
-Route::get('/events/{event}', [EventsController::class, 'show']);
+
+//Show Create form
 Route::get('/eventsform', [EventsController::class, 'create']);
+
+//Store Event Data
 Route::post('/events', [EventsController::class, 'store']);
 
+//Show Edit Form
+Route::get('/events/{event}/edit', [EventsController::class, 'edit']);
 
-// Route::get('/home/{post}', [PostController::class, 'show']);
-// Route::view('/event', 'event');
-// Route::view('/register', 'register');
-// Route::view('/login', 'login');
-// Route::view('/profile', 'profile');
-// Route::view('/adminprofile', 'adminprofile');
+//Update Events
+Route::put('/events/{event}', [EventsController::class, 'update']);
+
+//Delete Events
+Route::delete('/events/{event}', [EventsController::class, 'destroy']);
+
+//Single Event
+Route::get('/events/{event}', [EventsController::class, 'show']);
+
+
+
+
+
+
+
+

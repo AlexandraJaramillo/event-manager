@@ -9,7 +9,7 @@
 
               <div class="max-w-full px-3 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none">
                 <div class="h-full bg-gradient-to-tl  rounded-xl">
-                  <img src="{{$event->cover ? asset('storage/' . $event->cover) : asset('/images/dy4iT16f45CK7e5XsTXeOiywzDXjlYsOfh2yhxaz.png')}}" class="absolute top-0 hidden w-1/2 h-full lg:block" alt="" />
+                  <img src="{{$event->cover ? asset('storage/' . $event->cover) : asset('/images/ZAChEPmVBc7Y9TVxnV0oA2K1dKzg53ZdF52G0Uy4.png')}}" class="absolute top-0 hidden w-10 h-10 lg:block" alt="" />
                   
                 </div>
               </div>

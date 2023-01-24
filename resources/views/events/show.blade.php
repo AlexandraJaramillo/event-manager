@@ -5,7 +5,7 @@
       <x-card class="p-10">
         <div class="flex flex-col items-center justify-center text-center">
           <img class="w-48 mr-6 mb-6"
-            src="{{$event->logo ? asset('storage/' . $event->logo) : asset('/images/no-image.png')}}" alt="" />
+            src="{{$event->cover ? asset('storage/' . $event->cover) : asset('/images/ZAChEPmVBc7Y9TVxnV0oA2K1dKzg53ZdF52G0Uy4.png')}}" alt="" />
   
           <h3 class="text-2xl mb-2">
             {{$event->title}}
@@ -36,7 +36,7 @@
         </div>
       </x-card>
   
-      {{-- <x-card class="mt-4 p-2 flex space-x-6">
+      <x-card class="mt-4 p-2 flex space-x-6">
         <a href="/events/{{$event->id}}/edit">
           <i class="fa-solid fa-pencil"></i> Edit
         </a>
@@ -46,6 +46,6 @@
           @method('DELETE')
           <button class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>
         </form>
-      </x-card> --}}
+      </x-card>
     </div>
   </x-layout>

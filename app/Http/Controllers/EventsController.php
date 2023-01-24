@@ -33,9 +33,10 @@ class EventsController
     }
     //
 
-        // Store Event Data
+    // Store Event Data
     public function store(Request $request) {
        
+        // dd($request->file('cover'));
         $formFields = $request->validate([
             'title' => 'required',
             'tags' => 'required',
@@ -46,9 +47,9 @@ class EventsController
             'description' => 'required',
             'available' => 'required',
             'location' => 'required'
+            
         ]);
 
-        // dd($request->hasFile('cover'));
 
         if($request->hasFile('cover')) {
             $formFields['cover'] = $request->file('cover')->store('images', 'public');
@@ -58,22 +59,47 @@ class EventsController
 
         return redirect('/')->with('message', 'Event created successfully!');
     }
-
+    
+    
     // Show Edit Form
     public function edit(Event $event) {
+        return view('events.edit', ['event' => $event]);
         
     }
 
-    // Update Event Data
+
+    // Update Event Data   
     public function update(Request $request, Event $event) {
-        // Make sure logged in user is admin
-        
+       
+        // dd($request->file('cover'));
+        $formFields = $request->validate([
+            'title' => 'required',
+            'tags' => 'required',
+            'link' => 'required',
+            'date' => 'required',
+            'time' => 'required',   
+            'max_participants' => 'required',          
+            'description' => 'required',
+            'available' => 'required',
+            'location' => 'required',
+            
+        ]);
+
+
+        if($request->hasFile('cover')) {
+            $formFields['cover'] = $request->file('cover')->store('images', 'public');
+        }
+
+        $event->update($formFields);
+
+        return redirect('/')->with('message', 'Event updated successfully!');
     }
 
     // Delete Event
     public function destroy(Event $event) {
-        // Make sure logged in user is admin
         
+         $event->delete();
+         return redirect('/')->with('message', 'Event Deleted Successfully');
     }
 
     

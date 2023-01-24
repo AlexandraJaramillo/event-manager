@@ -19,6 +19,6 @@ class Event extends Model
         'location',
         'max_participants',
         'available',
-        
+        'cover',        
     ];
 }
