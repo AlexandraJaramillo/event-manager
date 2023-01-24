@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('max_participants')->nullable();
             $table->string('tags');            
             $table->string('available');
+            $table->string('cover')->nullable();
             $table->string('link');           
             $table->timestamps();    
         });

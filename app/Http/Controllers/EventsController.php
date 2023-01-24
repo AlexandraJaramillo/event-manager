@@ -14,7 +14,7 @@ class EventsController
 
         return view('events.index', [
         
-            'events' => Event::all()         
+            'events' => Event::latest ()->paginate(3)        
 
         ]);
         
@@ -47,6 +47,8 @@ class EventsController
             'available' => 'required',
             'location' => 'required'
         ]);
+
+        // dd($request->hasFile('cover'));
 
         if($request->hasFile('cover')) {
             $formFields['cover'] = $request->file('cover')->store('images', 'public');
