@@ -15,17 +15,20 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            // Relations between users and event...
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            //
             $table->string('title');
-            $table->dateTime('date');
+            $table->string('description');
+            $table->date('date');
             $table->time('time');
-            $table->integer('max_participants');
-            $table->text('description');
-            $table->string('image');
-            $table->string('link');
-            $table->boolean('available');
-    
-
-    
+            $table->string('location')->nullable();
+            $table->string('max_participants')->nullable();
+            $table->string('tags');            
+            $table->string('available');
+            $table->string('cover')->nullable();
+            $table->string('link');           
+            $table->timestamps();    
         });
     }
 
