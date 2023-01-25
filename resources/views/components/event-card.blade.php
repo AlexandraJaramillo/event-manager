@@ -9,7 +9,7 @@
 
               <div class="max-w-full px-3 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none">
                 <div class="h-full bg-gradient-to-tl  rounded-xl">
-                  <img src="{{$event->cover ? asset('storage/' . $event->cover) : asset('/images/ZAChEPmVBc7Y9TVxnV0oA2K1dKzg53ZdF52G0Uy4.png')}}" class="absolute top-0 hidden w-10 h-10 lg:block" alt="" />
+                  <img src="{{$event->cover ? asset('storage/' . $event->cover) : asset('/images/ZAChEPmVBc7Y9TVxnV0oA2K1dKzg53ZdF52G0Uy4.png')}}" class="absolute top-0 hidden w-15 h-15 lg:block" alt="" />
                   
                 </div>
               </div>
@@ -21,7 +21,9 @@
                 </a>
                 <h5 class="font-bold">{{ $event->date }}</h5>
                 <p class="mb-12">{{ $event->time }}</p>
-                <p class="mb-12">{{ $event->location }}</p>
+                <div class="text-lg my-4">
+                  <i class="fa-solid fa-location-dot"></i> {{$event->location}}
+                </div>
                 <a class="mt-auto mb-0 font-semibold leading-normal text-sm group text-slate-500" href="javascript:;">
                   + interested
                   <i class="fas fa-arrow-right ease-bounce text-sm group-hover:translate-x-1.25 ml-1 leading-normal transition-all duration-200"></i>
