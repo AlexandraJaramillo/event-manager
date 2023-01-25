@@ -27,7 +27,19 @@
 
 <body class="mb-48">
   <nav class="flex justify-between items-center mb-4">
-    <a href="/"><img class="w-24" src="{{asset('images/react-native-firebase-1.svg')}}" alt="" class="logo" /></a>
+    {{-- <a href="/"><img class="w-24" src="{{asset('images/react-native-firebase-1.svg')}}" alt="" class="logo" /></a> --}}
+
+    <div class="header flex flex-row justify-between">
+      <a href="#" class="flex items-center mb-6 text-2xl font-bold text-gray-900 dark:text-gray-800">
+          <img class="w-8 h-8 mr-2 rotate-45" src="{{asset('images/react-native-firebase-1.svg')}} alt="logo">
+          VivaTech
+      </a>
+      {{-- <div class="w-10 h-10 bg-gray-900 rounded-full"></div> --}}
+     </div>
+
+
+
+
     <ul class="flex space-x-6 mr-6 text-lg">
       
       
@@ -62,8 +74,13 @@
     </ul>
   </nav>
 
-  <main>
+  <main class="container mx-auto px-4 ">
     {{-- @yield('content') --}}
+    <section class="link--btn">
+      <button type="button">Home</button>
+      <a href="#topEvents"><button type="button">Top Events</button></a>
+      <a href="#allEvents"><button type="button">All Events</button></a>
+  </section>
 
     
     {{$slot}}
