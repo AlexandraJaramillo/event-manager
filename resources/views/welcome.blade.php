@@ -121,6 +121,8 @@
                     </div>
                 </div>
             </div>
+            <a href="{{ url('/allEvents') }}"><h3 class="mt-2 text-gray-600 text-base">See all events <i class="fa-solid fa-arrow-right text-sm"></i></h3></a>
+
         </section>
     </main>
 </x-layouts.app>
