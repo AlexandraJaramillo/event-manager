@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventsController;
@@ -42,6 +44,10 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log in User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+//Admin Route
+// Route::get('/admin', [AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
+
 
 
 
