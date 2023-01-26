@@ -23,6 +23,4 @@
         <h2 class="font-bold">Free</h2>
         <button class="font-medium text-sm text-white bg-gray-800 px-5 py-1 rounded-2xl">BOOK NOW</button>
     </div>
-
-
 </x-layouts.app>

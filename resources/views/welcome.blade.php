@@ -5,16 +5,14 @@
     <main>
         <br>
         <div class="header flex flex-row justify-between">
-            <a href="#" class="flex items-center mb-6 text-2xl font-bold text-gray-900 dark:text-gray-800">
+            <a href="{{ url('/') }}" class="flex items-center text-xl font-bold text-gray-900 dark:text-gray-800">
                 <img class="w-8 h-8 mr-2 rotate-45" src="{{ asset('assets/Images/icon.png') }}" alt="logo">
                 VivaTech
             </a>
-            <div class="w-10 h-10 bg-gray-900 rounded-full"></div>
+            <a href="{{ url('/user') }}"><img class="rounded-full w-12 h-12 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image"></a>
         </div>
 
-        <br>
-
-        <section class="link--btn">
+        <section class="link--btn mt-8">
             <button type="button">Home</button>
             <a href="#topEvents"><button type="button">Top Events</button></a>
             <a href="#allEvents"><button type="button">All Events</button></a>
@@ -42,7 +40,7 @@
             <h2 class="text-xl font-medium">Top Events</h2>
             <p class="text-ms text-gray-500">Best events available for you.</p>
             <br>
-            <div class="top--events-carousel flex flex-row overflow-x-scroll gap-4 p-6">
+            <div class="top--events-carousel flex flex-row overflow-x-scroll gap-4 p-6 -mt-6">
                 <div class="w-30 min-w-fit bg-white rounded-lg shadow dark:bg-gray-800">
                     <a href="#">
                         <img class="rounded-t-lg w-full object-cover" src="{{ asset('assets/Images/congress.jpeg') }}" alt="" />
@@ -86,7 +84,7 @@
             <p class="text-ms text-gray-500">All events available for you.</p>
             <br>
 
-            <div class="top--events-carousel flex flex-row overflow-x-scroll gap-4 p-6">
+            <div class="top--events-carousel flex flex-row overflow-x-scroll gap-4 p-6 -mt-6">
                 <div class="w-30 min-w-full bg-white rounded-lg shadow dark:bg-gray-800">
                     <a href="#">
                         <img class="rounded-t-lg w-full object-cover" src="{{ asset('assets/Images/congress.jpeg') }}" alt="" />
@@ -121,8 +119,9 @@
                     </div>
                 </div>
             </div>
+            <br>
             <a href="{{ url('/allEvents') }}"><h3 class="mt-2 text-gray-600 text-base">See all events <i class="fa-solid fa-arrow-right text-sm"></i></h3></a>
-
         </section>
+        <br>
     </main>
 </x-layouts.app>
