@@ -8,9 +8,7 @@
     <br>
 
     <div class="flex flex-row gap-4">
-
         <img class="rounded-full w-24 h-24 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image">
-
         <div class="flex flex-col gap-2">
             <h2 class="text-base font-bold">Manolo Paco</h2>
             <p class="text-xs">⚙️ Tech Advisor en Factoria F5</p>
