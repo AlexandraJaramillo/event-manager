@@ -23,9 +23,9 @@
     <body>
     <h1>DIBUJA UNA BASE DE DATOS HERE</h1>
 
-    @foreach($posts as $post)
+    @foreach($events as $event)
 
-    <h2> $post->title </h2>
+    <h2> $event->title </h2>
 
     @endforeach
 
