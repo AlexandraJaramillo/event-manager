@@ -4,9 +4,13 @@
   
     <div class="lg:grid lg:grid-cols-1 gap-4 space-y-4 md:space-y-0 mx-4 bg-red-1 00">
 
+      {{-- @if(auth()->user()->role === '1')
+
       <a href="/eventsform">
         <p>Create Event</p>
       </a>
+
+      @endif --}}
         
   
       @unless(count($events) == 0)

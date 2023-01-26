@@ -1,6 +1,9 @@
 <x-layout>
     <a href="/" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
     </a>
+    <a href="/eventsform">
+      <p>Create Event</p>
+    </a>
     <div class="mx-4">
       <x-card class="p-10">
         <div class="flex flex-col items-center justify-center text-center">
@@ -36,15 +39,9 @@
         </div>
       </x-card>
 
-      @auth
-
-      @if(auth()->user()->role === '1')
-          
+      @auth          
       
       <x-card class="mt-4 p-2 flex space-x-6">
-        <a href="/eventsform">
-          <p>Create Event</p>
-        </a>
         <a href="/events/{{$event->id}}/edit">
           <i class="fa-solid fa-pencil"></i> Edit
         </a>
@@ -55,7 +52,6 @@
           <button class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>
         </form>
       </x-card>
-      @endif
       @endauth
     </div>
   </x-layout>

@@ -15,6 +15,7 @@ class UserController extends Controller
 
     // Create new User
     public function store(Request $request) {
+
         $formFields = $request->validate([
             'name' => ['required','min:3' ],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
@@ -29,6 +30,10 @@ class UserController extends Controller
 
         //Login
         auth()->login($user);
+
+        if (auth()->user()->role == 'admin') {
+            # code...
+        }
 
         return redirect('/')->with('message', 'User created an logged in');
 

@@ -48,6 +48,11 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 //Admin Route
 // Route::get('/admin', [AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
 
+Route::middleware([AdminAuth::class])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+});
+
 
 
 
