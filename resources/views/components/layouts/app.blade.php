@@ -13,13 +13,16 @@
 <body>
     <x-layouts.navigation />
 
-    @if (session('status'))
-        <div>
-            {{ session('status') }}
-        </div>
-    @endif
+    <div class="container mx-auto px-4">
 
-    {{ $slot }}
+        @if (session('status'))
+            <div>
+                {{ session('status') }}
+            </div>
+        @endif
+
+        {{ $slot }}
+    </div>
 
     <script src="https://kit.fontawesome.com/91cce502f4.js" crossorigin="anonymous"></script>
 </body>

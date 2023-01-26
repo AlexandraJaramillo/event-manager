@@ -1,6 +1,6 @@
 <x-layouts.login
-	title="Home"
-	meta-description="Home meta description"
+	title="Login"
+	meta-description="Login meta description"
 	>
 
     <section class="bg-gray-50 dark:bg-gray-900 h-screen">
