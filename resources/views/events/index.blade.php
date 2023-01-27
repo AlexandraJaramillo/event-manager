@@ -8,9 +8,24 @@
 
       <a href="/eventsform">
         <p>Create Event</p>
-      </a>
+      </a> 
 
       @endif --}}
+
+      <br>
+        <div class="header flex flex-row justify-between">
+            <a href="{{ url('/') }}" class="flex items-center text-xl font-bold text-gray-900 dark:text-gray-800">
+                <img class="w-8 h-8 mr-2 rotate-45" src="{{ asset('assets/Images/icon.png') }}" alt="logo">
+                VivaTech
+            </a>
+            <a href="{{ url('/user') }}"><img class="rounded-full w-12 h-12 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image"></a>
+        </div>
+
+        <section class="link--btn mt-8">
+            <button type="button">Home</button>
+            <a href="#topEvents"><button type="button">Top Events</button></a>
+            <a href="#allEvents"><button type="button">All Events</button></a>
+        </section>
         
   
       @unless(count($events) == 0)
@@ -28,9 +43,9 @@
     </div>
 
     {{-- Paginate, relation to ->paginate(3) on EventController --}}
-    <div class="mt-6 p-4">
+    {{-- <div class="mt-6 p-4">
       {{$events->links()}}
-    </div>
+    </div> --}}
 
   </x-layout>
   
