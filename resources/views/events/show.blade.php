@@ -5,7 +5,7 @@
       <x-card class="p-10">
         <div class="flex flex-col items-center justify-center text-center">
           <img class="w-48 mr-6 mb-6"
-            src="{{$event->cover ? asset('storage/' . $event->cover) : asset('/images/ZAChEPmVBc7Y9TVxnV0oA2K1dKzg53ZdF52G0Uy4.png')}}" alt="" />
+            src="{{$event->cover ? asset('storage/' . $event->cover) : asset('/images/ZAChEPmVBc7Y9TVxnV0oA2K1dKzg53ZdF52G0Uy4.png')}}"  alt="" />
   
           <h3 class="text-2xl mb-2">
             {{$event->title}}
