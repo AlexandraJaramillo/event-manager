@@ -11,6 +11,8 @@ class UserController extends Controller
     // Show Register/Create Form
     public function create() {
         return view('users.register');
+
+        
     }
 
     // Create new User
@@ -53,7 +55,7 @@ class UserController extends Controller
 
     // Show Login Form
     public function login() {
-        return view('users.login');
+        return view('user');
 
     }
 
@@ -73,6 +75,14 @@ class UserController extends Controller
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
 
+    }
+
+    public function userview(User $user) {
+        return view('user',
+        [
+            'user' => $user
+        ]);
+        
     }
 
 

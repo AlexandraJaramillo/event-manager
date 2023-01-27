@@ -1,4 +1,4 @@
-<x-layout>
+<x-layouts.app>
   
     {{-- @include('partials._carousel') --}}
   
@@ -35,7 +35,16 @@
             </a>
             @auth
                 
-            <a href="events.show"><img class="rounded-full w-12 h-12 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image"></a>
+            <a href="/user"><img class="rounded-full w-12 h-12 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image"></a>
+
+            <form class="inline hover:text-laravel" method="POST" action="/logout">
+              @csrf
+              <button type="submit">
+                  <i class="fa-solid fa-door-closed"></i> Logout
+              </button>
+          </form>
+
+
             @endauth
         </div>
 
@@ -60,7 +69,7 @@
               <p class="text-sm">{{$event->description}}</p>
               <div class="card--main-btn place-items-start">
                 <button class="interested text-white bg-gray-800">+ Interested</button>
-                <button class="interested--amount text-black"><i class="fa-solid fa-user"></i> {{$event->max_participants}}</button>
+                <button class="interested--amount text-white"><i class="fa-solid fa-user"></i> {{$event->max_participants}}</button>
               </div>
               <br>
             </div>
@@ -150,9 +159,9 @@
     </div>
 
     {{-- Paginate, relation to ->paginate(3) on EventController --}}
-    <div class="mt-6 p-4">
+    {{-- <div class="mt-6 p-4">
       {{$events->links()}}
-    </div>
+    </div> --}}
 
-  </x-layout>
+  </x-layouts.app>
   

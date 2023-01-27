@@ -19,7 +19,7 @@ use App\Http\Controllers\EventsController;
 // Route::get('/blog/create', [PostController::class, 'create'])->name('posts.create');
 // Route::post('/blog', [PostController::class, 'store'])->name('posts.store');
 // Route::get('/blog/{post}', [PostController::class, 'show'])->name('posts.show');
-// Route::view('/user', 'user')->name('user');
+Route::view('/user', 'user')->name('user');
 // Route::view('/singleEvent', 'singleEvent')->name('singleEvent');
 // Route::view('/allEvents', 'allEvents')->name('allEvents');
 //EVENTS

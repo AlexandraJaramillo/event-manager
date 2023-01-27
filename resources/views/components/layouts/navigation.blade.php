@@ -20,6 +20,7 @@
                             class="px-3 py-2 text-lg font-medium rounded-md hover:text-sky-600 dark:hover:text-dark {{ request()->routeIs('login') ? 'text-blue-500' : 'text-slate-200' }}">
                             <i class="fa-solid fa-user"></i>
                         </a>
+                        
                     </div>
                 </div>
             </div>

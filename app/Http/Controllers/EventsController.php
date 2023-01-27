@@ -14,7 +14,8 @@ class EventsController
 
         return view('events.index', [
         
-            'events' => Event::latest ()->paginate(3)        
+            // 'events' => Event::latest ()->paginate(3)   
+            'events' => Event::all()
 
         ]);
 
@@ -22,87 +23,87 @@ class EventsController
         
     }
 
-    // //Show single event
-    // public function show(Event $event) {
-    //     return view('events.show', [
-    //         'event' => $event
-    //     ]);
-    // }
+    //Show single event
+    public function show(Event $event) {
+        return view('events.show', [
+            'event' => $event
+        ]);
+    }
 
-    // // Show Create Form
-    // public function create() {
-    //     return view('events.create');
-    // }
-    // //
+    // Show Create Form
+    public function create() {
+        return view('events.create');
+    }
+    //
 
-    // // Store Event Data
-    // public function store(Request $request) {
+    // Store Event Data
+    public function store(Request $request) {
        
-    //     // dd($request->file('cover'));
-    //     $formFields = $request->validate([
-    //         'title' => 'required',
-    //         'tags' => 'required',
-    //         'link' => 'required',
-    //         'date' => 'required',
-    //         'time' => 'required',   
-    //         'max_participants' => 'required',          
-    //         'description' => 'required',
-    //         'available' => 'required',
-    //         'location' => 'required'
+        // dd($request->file('cover'));
+        $formFields = $request->validate([
+            'title' => 'required',
+            'tags' => 'required',
+            'link' => 'required',
+            'date' => 'required',
+            'time' => 'required',   
+            'max_participants' => 'required',          
+            'description' => 'required',
+            'available' => 'required',
+            'location' => 'required'
             
-    //     ]);
+        ]);
 
 
-    //     if($request->hasFile('cover')) {
-    //         $formFields['cover'] = $request->file('cover')->store('images', 'public');
-    //     }
+        if($request->hasFile('cover')) {
+            $formFields['cover'] = $request->file('cover')->store('images', 'public');
+        }
 
-    //     Event::create($formFields);
+        Event::create($formFields);
 
-    //     return redirect('/')->with('message', 'Event created successfully!');
-    // }
+        return redirect('/')->with('message', 'Event created successfully!');
+    }
     
     
-    // // Show Edit Form
-    // public function edit(Event $event) {
-    //     return view('events.edit', ['event' => $event]);
+    // Show Edit Form
+    public function edit(Event $event) {
+        return view('events.edit', ['event' => $event]);
         
-    // }
+    }
 
 
-    // // Update Event Data   
-    // public function update(Request $request, Event $event) {
+    // Update Event Data   
+    public function update(Request $request, Event $event) {
        
-    //     // dd($request->file('cover'));
-    //     $formFields = $request->validate([
-    //         'title' => 'required',
-    //         'tags' => 'required',
-    //         'link' => 'required',
-    //         'date' => 'required',
-    //         'time' => 'required',   
-    //         'max_participants' => 'required',          
-    //         'description' => 'required',
-    //         'available' => 'required',
-    //         'location' => 'required',
+        // dd($request->file('cover'));
+        $formFields = $request->validate([
+            'title' => 'required',
+            'tags' => 'required',
+            'link' => 'required',
+            'date' => 'required',
+            'time' => 'required',   
+            'max_participants' => 'required',          
+            'description' => 'required',
+            'available' => 'required',
+            'location' => 'required',
             
-    //     ]);
+        ]);
 
 
-    //     if($request->hasFile('cover')) {
-    //         $formFields['cover'] = $request->file('cover')->store('images', 'public');
-    //     }
+        if($request->hasFile('cover')) {
+            $formFields['cover'] = $request->file('cover')->store('images', 'public');
+        }
 
-    //     $event->update($formFields);
+        $event->update($formFields);
 
-    //     return redirect('/')->with('message', 'Event updated successfully!');
-    // }
+        return redirect('/')->with('message', 'Event updated successfully!');
+    }
 
-    // // Delete Event
-    // public function destroy(Event $event) {
+    // Delete Event
+    public function destroy(Event $event) {
         
-    //      $event->delete();
-    //      return redirect('/')->with('message', 'Event Deleted Successfully');
-    // }
+         $event->delete();
+         return redirect('/')->with('message', 'Event Deleted Successfully');
+    }
 
     
 }

@@ -14,12 +14,8 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-<<<<<<< HEAD
         "postcss-scss": "^4.0.6",
         "react-scroll-to-top": "^3.0.0",
         "sass": "^1.57.1"
-=======
-        "bootstrap": "^5.2.3"
->>>>>>> 41aca358a0d5d66536ec5903c141280665460449
     }
 }

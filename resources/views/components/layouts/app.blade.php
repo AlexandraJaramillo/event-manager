@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    {{-- <x-layouts.navigation /> --}}
+    <x-layouts.navigation />
 
     <div class="container mx-auto px-4">
 

@@ -58,4 +58,4 @@
       @endif
       @endauth
     </div>
-  </x-layout>
+  </x-layout.app>

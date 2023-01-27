@@ -10,10 +10,11 @@
     <div class="flex flex-row gap-4">
         <img class="rounded-full w-24 h-24 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image">
         <div class="flex flex-col gap-2">
-            <h2 class="text-base font-bold">Manolo Paco</h2>
+            <h2 class="text-base font-bold"></h2>
             <p class="text-xs">⚙️ Tech Advisor en Factoria F5</p>
             <p class="text-xs">🚀 Amigo de Andrés y Rocío</p>
             <p class="text-xs text-gray-500 font-semibold">Barcelona</p>
+            
         </div>
     </div>
 
@@ -62,7 +63,14 @@
 
     <br>
 
-    <section id="topEvents" class="top--events">
+    <div class="flex flex-column gap-4  bg-red mb-40">
+        <a href="/eventsform">
+           <p>Create Event</p>
+         </a>
+
+   </div>
+
+    {{-- <section id="topEvents" class="top--events">
         <h2 class="text-lg font-medium">Liked Events</h2>
         <br>
         <div class="top--events-carousel flex flex-row overflow-x-scroll gap-4 p-10 -mt-12">
@@ -141,6 +149,10 @@
                     </a>
                 </div>
             </div>
+
+        
         </div>
-    </section>
+    </section> --}}
+
+
 </x-layouts.app>
