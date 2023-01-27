@@ -18,7 +18,21 @@
                 <img class="w-8 h-8 mr-2 rotate-45" src="{{ asset('assets/Images/icon.png') }}" alt="logo">
                 VivaTech
             </a>
-            <a href="{{ url('/user') }}"><img class="rounded-full w-12 h-12 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image"></a>
+
+
+            @auth
+                
+            <a href="/user"><img class="rounded-full w-12 h-12 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image"></a>
+
+            <form class="inline hover:text-laravel" method="POST" action="/logout">
+              @csrf
+              <button type="submit">
+                  <i class="fa-solid fa-door-closed"></i> Logout
+              </button>
+          </form>
+
+
+            @endauth
         </div>
 
         <section class="link--btn mt-8">
