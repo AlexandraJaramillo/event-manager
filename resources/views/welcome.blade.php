@@ -42,7 +42,7 @@
             <br>
             <div class="top--events-carousel flex flex-row overflow-x-scroll gap-4 p-6 -mt-6">
                 @foreach ($events as $event)
-                    
+
                 <div class="w-30 min-w-fit bg-white rounded-lg shadow dark:bg-gray-800">
                     <a href="#">
                         <img class="rounded-t-lg w-full object-cover" src="{{ asset('assets/Images/congress.jpeg') }}" alt="" />
@@ -54,7 +54,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 @endforeach
             </div>
         </section>
