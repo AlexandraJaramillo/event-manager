@@ -21,13 +21,13 @@ class EventTest extends TestCase
         Event::factory(5)->create();
 
         //Método HTTP
-        $response = $this->get('/events');
+        $response = $this->get('/');
 
         $response->assertOk();
         $events = Event::all();
 
         //Comparar en la vista los valores
-        $response->assetViewIs('events.index');
+        $response->assertViewIs('events.index');
         $response->assertViewHas('events', $events);
 
      }

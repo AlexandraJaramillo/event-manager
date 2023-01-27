@@ -14,7 +14,8 @@ class EventsController
 
         return view('events.index', [
         
-            'events' => Event::latest ()->paginate(3)        
+            // 'events' => Event::latest ()->paginate(3)      
+            'events' => Event::all()  
 
         ]);
         

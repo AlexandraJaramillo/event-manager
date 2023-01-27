@@ -24,9 +24,9 @@
     </div>
 
     {{-- Paginate, relation to ->paginate(3) on EventController --}}
-    <div class="mt-6 p-4">
+    {{-- <div class="mt-6 p-4">
       {{$events->links()}}
-    </div>
+    </div> --}}
 
   </x-layout>
   
