@@ -7,7 +7,7 @@ use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class EventController
+class EventsController
 {
     //Show all events
     public function index() {
