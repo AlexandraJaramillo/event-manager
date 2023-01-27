@@ -19,9 +19,6 @@ return new class extends Migration
             // $table->foreignId('user_id')->constrained()->onDelete('cascade');
             //
             $table->string('title');
-<<<<<<< HEAD:database/migrations/2023_01_18_184925_create_posts_table.php
-            $table->timestamps();
-=======
             $table->string('description');
             $table->date('date');
             $table->time('time');
@@ -32,7 +29,6 @@ return new class extends Migration
             $table->string('cover')->nullable();
             $table->string('link');           
             $table->timestamps();    
->>>>>>> 41aca358a0d5d66536ec5903c141280665460449:database/migrations/2023_01_15_171052_create_events_table.php
         });
     }
 

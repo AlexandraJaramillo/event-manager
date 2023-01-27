@@ -9,7 +9,7 @@
                 <img class="w-8 h-8 mr-2 rotate-45" src="{{ asset('assets/Images/icon.png') }}" alt="logo">
                 VivaTech
             </a>
-            <a href="{{ url('/user') }}"><img class="rounded-full w-12 h-12 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image"></a>
+            <a href="/user"><img class="rounded-full w-12 h-12 object-cover" src="{{ asset('assets/Images/joe.png') }}" alt="image"></a>
         </div>
 
         <section class="link--btn mt-8">
@@ -18,7 +18,7 @@
             <a href="#allEvents"><button type="button">All Events</button></a>
         </section>
 
-        <a href="{{ url('/singleEvent') }}">
+        <a href="/singleEvent">
             <section class="card--main">
                 <img src="{{ asset('assets/Images/congress.jpeg') }}" alt="new event image">
                 <div class="card--main-info">
@@ -41,39 +41,21 @@
             <p class="text-ms text-gray-500">Best events available for you.</p>
             <br>
             <div class="top--events-carousel flex flex-row overflow-x-scroll gap-4 p-6 -mt-6">
+                @foreach ($events as $event)
+                    
                 <div class="w-30 min-w-fit bg-white rounded-lg shadow dark:bg-gray-800">
                     <a href="#">
                         <img class="rounded-t-lg w-full object-cover" src="{{ asset('assets/Images/congress.jpeg') }}" alt="" />
                     </a>
                     <div class="p-4">
                         <a href="#">
-                            <h5 class="mb-2 text-m font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2023</h5>
+                            <h5 class="mb-2 text-m font-bold tracking-tight text-gray-900 dark:text-white"></h5>
                             <h5 class="mb-2 text-xs font-medium tracking-tight text-gray-900 dark:text-white">Friday, 13 Feb at 13:00h</h5>
                         </a>
                     </div>
                 </div>
-                <div class="w-30 min-w-full bg-white rounded-lg shadow dark:bg-gray-800">
-                    <a href="#">
-                        <img class="rounded-t-lg w-full object-cover" src="{{ asset('assets/Images/congress.jpeg') }}" alt="" />
-                    </a>
-                    <div class="p-4">
-                        <a href="#">
-                            <h5 class="mb-2 text-m font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2023</h5>
-                            <h5 class="mb-2 text-xs font-medium tracking-tight text-gray-900 dark:text-white">Friday, 13 Feb at 13:00h</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-30 min-w-full bg-white rounded-lg shadow dark:bg-gray-800">
-                    <a href="#">
-                        <img class="rounded-t-lg w-full object-cover" src="{{ asset('assets/Images/congress.jpeg') }}" alt="" />
-                    </a>
-                    <div class="p-4">
-                        <a href="#">
-                            <h5 class="mb-2 text-m font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2023</h5>
-                            <h5 class="mb-2 text-xs font-medium tracking-tight text-gray-900 dark:text-white">Friday, 13 Feb at 13:00h</h5>
-                        </a>
-                    </div>
-                </div>
+                
+                @endforeach
             </div>
         </section>
 
@@ -120,7 +102,7 @@
                 </div>
             </div>
             <br>
-            <a href="{{ url('/allEvents') }}"><h3 class="mt-2 text-gray-600 text-base">See all events <i class="fa-solid fa-arrow-right text-sm"></i></h3></a>
+            <a href="/allEvents"><h3 class="mt-2 text-gray-600 text-base">See all events <i class="fa-solid fa-arrow-right text-sm"></i></h3></a>
         </section>
         <br>
     </main>

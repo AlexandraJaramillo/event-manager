@@ -6,18 +6,18 @@
                 <div class="mx-auto">
                     <div class="flex space-x-20">
                         <!-- Active: 'text-sky-600 dark:text-white', Inactive 'text-slate-400' -->
-                        <a href="{{ route('home') }}"
-                            class="px-3 py-2 text-lg font-medium rounded-md hover:text-sky-600 dark:hover:text-dark {{ request()->routeIs('home') ? 'text-blue-500' : 'text-slate-200' }}">
+                        <a href="/"
+                            class="px-3 py-2 text-lg font-medium rounded-md hover:text-sky-600 dark:hover:text-dark {{ request()->routeIs('/') ? 'text-blue-500' : 'text-slate-200' }}">
                             <i class="fa-solid fa-house"></i>
                         </a>
                         <!-- Active: 'text-sky-600 dark:text-white', Inactive 'text-slate-400' -->
-                        <a href="{{ route('posts.index') }}"
-                            class="px-3 py-2 text-lg font-medium rounded-md hover:text-sky-600 dark:hover:text-dark {{ request()->routeIs('posts.*') ? 'text-blue-500' : 'text-slate-200' }}">
+                        <a href="/"
+                            class="px-3 py-2 text-lg font-medium rounded-md hover:text-sky-600 dark:hover:text-dark {{ request()->routeIs('/') ? 'text-blue-500' : 'text-slate-200' }}">
                             <i class="fa-solid fa-ticket"></i>
                         </a>
                         <!-- Active: 'text-sky-600 dark:text-white', Inactive 'text-slate-400' -->
-                        <a href="{{ route('user') }}"
-                            class="px-3 py-2 text-lg font-medium rounded-md hover:text-sky-600 dark:hover:text-dark {{ request()->routeIs('user') ? 'text-blue-500' : 'text-slate-200' }}">
+                        <a href="/login"
+                            class="px-3 py-2 text-lg font-medium rounded-md hover:text-sky-600 dark:hover:text-dark {{ request()->routeIs('login') ? 'text-blue-500' : 'text-slate-200' }}">
                             <i class="fa-solid fa-user"></i>
                         </a>
                     </div>
